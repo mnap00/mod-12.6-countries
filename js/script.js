@@ -19,6 +19,13 @@ function searchCountries() {
 function showCountriesList(resp) {
     countriesList.empty();
     resp.forEach(function(item) {
-        $('<li>').text(item.name + ' | capital city: ' + item.capital).appendTo(countriesList).text();
+        var itemClass = item.alpha3Code;
+        $('<ul>').appendTo(countriesList).addClass(itemClass);
+        $('<li>').text(item.name).appendTo('.' + itemClass);
+        $('<li>').text('ISO codes: ' + itemClass + ', ' + item.alpha2Code)
+            .appendTo('.' + itemClass);
+        $('<li>').text('capital city: ' + item.capital)
+            .appendTo('.' + itemClass);
+        $('<img>').attr('src',item.flag).appendTo('.' + itemClass);
     });
 }
