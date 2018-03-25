@@ -13,7 +13,8 @@ function searchCountries() {
     $.ajax({
         url: url + countryName,
         method: 'GET',
-        success: showCountriesList
+        success: showCountriesList,
+        error: showError
     });
 }
 
@@ -21,14 +22,14 @@ function searchByRegion() {
     var regionName = $('#country-name').val();
     if (!regionName.length) regionName = 'Europe';
     var url = urlRegion + regionName;
-    $.getJSON(url, showCountriesList);
+    $.getJSON(url, showCountriesList).fail(showError);
 }
 
 function searchByCapital() {
     var capitalName = $('#country-name').val();
     if (!capitalName.length) capitalName = 'Warsaw';
     var url = urlCapital + capitalName;
-    $.getJSON(url, showCountriesList);
+    $.getJSON(url, showCountriesList).fail(showError);
 }
 
 function showCountriesList(resp) {
@@ -43,4 +44,9 @@ function showCountriesList(resp) {
         $('<li>').text('capital city: ' + item.capital)
             .appendTo('.' + itemClass);
     });
+}
+
+function showError() {
+    countriesList.empty();
+    $('<li>').text('Could not find any country.').appendTo(countriesList);
 }
