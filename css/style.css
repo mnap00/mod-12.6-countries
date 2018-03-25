@@ -1,51 +1,17 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-body {
-  font-family: Roboto, sans-serif;
-  margin: 0;
-  padding: 48px;
-}
+body { font-family: Roboto, sans-serif; margin: 0; padding: 48px; }
 
-.container {
-  margin: 0 auto;
-  max-width: 900px;
-}
+.container { margin: 0 auto; max-width: 900px; }
 
-button {
-  cursor: pointer;
-}
+button { cursor: pointer; }
 
-button,
-input {
-  border: 1px solid #000;
-  border-radius: 4px;
-  display: block;
-  font-family: Roboto, sans-serif;
-  height: 32px;
-  line-height: 32px;
-  margin-top: 4px;
-  padding: 0 8px;
-  width: 150px;
-}
+button, input { border: 1px solid #000; border-radius: 4px; display: block; font-family: Roboto, sans-serif; height: 32px; line-height: 30px; margin-top: 4px; padding: 0 8px; width: 150px; }
 
-h4 {
-  margin-bottom: 4px;
-}
+h4 { margin-bottom: 4px; }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
+ul { margin: 0; padding: 0; }
 
-ul li {
-  list-style-type: none;
-}
+ul li { list-style-type: none; }
 
-img {
-  box-shadow: 1px 1px 4px;
-  margin-bottom: 4px;
-  max-height: 48px;
-}
-/*# sourceMappingURL=style.css.map */
+img { box-shadow: 1px 1px 4px; margin-bottom: 4px; max-height: 48px; }
