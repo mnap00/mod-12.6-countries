@@ -1,19 +1,34 @@
 var url = 'https://restcountries.eu/rest/v2/name/';
+var urlRegion = 'https://restcountries.eu/rest/v2/region/';
+var urlCapital = 'https://restcountries.eu/rest/v2/capital/';
 var countriesList = $('#countries');
 
 $('#search').click(searchCountries);
+$('#search-region').click(searchByRegion);
+$('#search-capital').click(searchByCapital);
 
 function searchCountries() {
     var countryName = $('#country-name').val();
     if (!countryName.length) countryName = 'Poland';
-//    var countryUrl = url + countryName;
-
-//    $.getJSON(countryUrl, showCountriesList);
     $.ajax({
         url: url + countryName,
         method: 'GET',
         success: showCountriesList
     });
+}
+
+function searchByRegion() {
+    var regionName = $('#country-name').val();
+    if (!regionName.length) regionName = 'Europe';
+    var url = urlRegion + regionName;
+    $.getJSON(url, showCountriesList);
+}
+
+function searchByCapital() {
+    var capitalName = $('#country-name').val();
+    if (!capitalName.length) capitalName = 'Warsaw';
+    var url = urlCapital + capitalName;
+    $.getJSON(url, showCountriesList);
 }
 
 function showCountriesList(resp) {
